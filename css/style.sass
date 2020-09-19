@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap')
+
+*
+  font-family: Lato, sans-serif
+  -webkit-tap-highlight-color: transparent
+  outline: none
+
+html, body
+  overscroll-behavior: none
+
+@keyframes animateBg
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.5)
+
+body
+  margin: 0
+  padding: 0
+  overflow-x: hidden
+
+::-webkit-scrollbar
+  width: 0
+
+header
+  position: fixed
+  top: 0
+  width: 100%
+  display: flex
+  justify-content: space-between
+  height: 60px
+  padding: 10px 0
+  z-index: 999
+  box-shadow: #0008 2px 2px 2px
+  background: linear-gradient(45deg, #7e0ebd, #1f75ff)
+
+  table, tr, td
+    height: 100%
+    vertical-align: middle
+
+  td
+    padding: 0 10px
+
+  a
+    text-transform: uppercase
+    text-decoration: none
+    color: #fff
+    font-size: 18px
+
+#ecell-logo
+  width: 80px
+  height: 80px
+  filter: invert(0)
+  vertical-align: middle
+  margin: -10px 0
+  transition: filter 1s
+
+#nav-button, #nav-button-exit
+  border: none
+  background: transparent
+  position: fixed
+  right: 10px
+  top: 15px
+  font-size: 2.2em
+  outline: none
+  cursor: pointer
+  transition: transform 0.5s
+  color: #fff
+
+#nav-button
+  position: static
+
+#nav-button:hover
+  transform: scaleY(1.2)
+
+#nav-button-exit
+  color: #fff
+
+  &:hover
+    transform: scaleY(0.8)
+
+#main-menu
+  position: fixed
+  display: none
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100%
+  opacity: 0
+  background: linear-gradient(45deg, #7e0ebd, #1f75ff)
+  transition: opacity 1s
+  color: #fff
+  z-index: 1000
+  font-family: Nunito, sans-serif
+
+  table, tr, td
+    width: 100vw
+    height: 100%
+    vertical-align: middle
+    text-align: center
+
+  td
+    ul
+      list-style-type: none
+      margin: 0
+      padding: 0
+
+      li
+        margin: 0
+        padding: 0
+
+      li a
+        position: relative
+        color: #fff
+        text-decoration: none
+        display: inline-block
+        padding: 5px
+        font-size: 2em
+        font-family: Nunito, sans-serif
+        font-variant: all-small-caps
+        transform: scale(0.5)
+        opacity: 0
+        transition: 0.5s all
+
+        &::after
+          content: ''
+          position: absolute
+          bottom: 8px
+          left: 0
+          width: 100%
+          height: 1px
+          background: #fff
+          transform: scale(0)
+          transition: 0.5s
+
+        &:hover::after
+          transform: none
+
+#underline
+  position: absolute
+  overflow: hidden
+  width: 200px
+  color: transparent
+  background: #fff
+  height: 2px
+  opacity: 0
+  transition: all 0.5s
+
+#plane1, #plane2, #plane3
+  position: fixed
+  height: 100%
+  top: calc(100% + 20px)
+  left: 0
+  width: 100vw
+  z-index: 5
+  background: linear-gradient(45deg, #888, #1f75ff)
+  box-shadow: 0 0 10px 10px #000
+
+#plane2
+  background: linear-gradient(45deg, #1f75ff, #1f75ff)
+  box-shadow: 0 0 10px 10px #000
+
+#plane3
+  background: linear-gradient(45deg, #7e0ebd, #000)
+  box-shadow: 0 0 10px 10px #000
+
+@media (max-width: 900px)
+  #plane1, #plane2, #plane3
+    z-index: 1000
+  .navlink
+    display: none
+    font-size: 25px
+    margin: 0 auto
+  #ecell-logo
+    width: 80px
+
+.main
+  margin: 40px
+
+@media (max-width: 900px)
+  .main
+    margin: 0 0 0
+
+  #underline
+    display: block
+    transition: 2s all
+    height: 4px
+    top: 80px
+
+#background
+  animation: animateBg forwards 40s ease-in-out
+  animation-iteration-count: infinite
+  position: fixed
+  top: 80px
+  width: 100vw
+  height: calc(100% - 80px)
+  z-index: -10
+  overflow: hidden
+  transition: background 0.5s
+
+  &.b1
+    background: url("../images/speaker1.jpg") fixed center no-repeat
+    background-size: cover
+
+  &.b2
+    background: url("../images/speaker2.jpg") fixed center no-repeat
+    background-size: cover
+
+  &.b3
+    background: url("../images/speaker3.jpg") fixed center no-repeat
+    background-size: cover
+
+  &.b4
+    background: url("../images/speaker4.jpg") fixed center no-repeat
+    background-size: cover
+
+  &.b5
+    background: url("../images/speaker1.jpg") fixed center no-repeat
+    background-size: cover
+
+  &.b6
+    background: url("../images/speaker2.jpg") fixed center no-repeat
+    background-size: cover
+
+  &.b7
+    background: url("../images/speaker3.jpg") fixed center no-repeat
+    background-size: cover
+
+  &.b8
+    background: url("../images/speaker4.jpg") fixed center no-repeat
+    background-size: cover
+
+  &.b9
+    background: url("../images/speaker1.jpg") fixed center no-repeat
+    background-size: cover
+
+
+.card
+  position: fixed
+  height: calc(100% - 80px)
+  width: 100vw
+  left: 0
+  bottom: 0
+  opacity: 0
+  color: #fff
+  background: #002a
+  transition: all 1s
+
+#section1 .card1
+  opacity: 1
+
+.title, .content
+  font-size: 2em
+  padding: 15px 45px
+  display: inline-block
+  position: absolute
+  bottom: 0
+
+.content
+  position: relative
+  display: block
+  font-size: 1.1em
+  background: none
+  height: calc(100% - 80px - 2.5em)
+  overflow-y: auto
+
+  table
+    height: 100%
+
+    tr
+      height: 100%
+
+      td
+        height: 100%
+        vertical-align: middle
+
+
+.carousel-nav
+  position: fixed
+  background: #fffa
+  border-radius: 50%
+  left: 10px
+  top: 50%
+  border: none
+  box-shadow: black 2px 2px 2px 2px
+  width: 50px
+  height: 50px
+  font-size: 1.5em
+  transition: all 0.25s
+
+#right
+  left: auto
+  right: 10px
+
+.carousel-nav:hover
+  background: #fff
+  cursor: pointer
+  box-shadow: #000 2px 2px 20px 2px
+
+#splash
+  position: fixed
+  top: 0
+  height: 100%
+  width: 100%
+  left: 0
+  z-index: 100000
+  background: #000e
+  color: #fff
+  opacity: 1
+
+  table, tr, td
+    height: 100%
+    width: 100%
+
+  td
+    text-align: center
+    vertical-align: middle
+    font-size: 2em
+
+@media (min-width: 900px)
+  .title, .content
+    padding: 15px 400px 15px 100px
+
+  .content
+    font-size: 3vh
+
+  .title
+    padding-bottom: 50px
+
+  #splash
+    display: none
